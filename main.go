@@ -62,7 +62,7 @@ func main() {
 			<p>Example: <a href="/weather?lat=25.7617&lon=-80.1918">Miami</a></p>
 			<p>Example: <a href="/weather?lat=47.6062&lon=-122.3321">Seattle</a></p>
 			
-			<h2>⚠️ Important Note:</h2>
+			<h2>⚠Important Note:</h2>
 			<p><strong>This service only works for US locations.</strong> The National Weather Service API covers the United States and its territories only.</p>
 			<p>For international locations, coordinates outside the US will return an error.</p>
 		</body>
@@ -80,7 +80,7 @@ func getWeather(w http.ResponseWriter, r *http.Request) {
 
 	// Parse query parameters
 	lat := r.URL.Query().Get("lat")
-	lon := r.URL.Query().Get("lon")
+	lon := r.URL.Query().Get("lon")respondWithError
 
 	if lat == "" || lon == "" {
 		respondWithError(w, "Missing required parameters: lat and lon", http.StatusBadRequest)
