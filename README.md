@@ -11,6 +11,16 @@ A simple HTTP server that provides weather forecasts using the National Weather 
 - **Input Validation**: Validates coordinate ranges and formats
 - **Error Handling**: Comprehensive error handling with meaningful messages
 
+## Important: Coverage Limitations
+
+**⚠️ The National Weather Service API only covers the United States and its territories.**
+
+This service will return errors for coordinates outside:
+- **Continental US**: 25°N to 50°N, 65°W to 125°W
+- **Alaska**: 50°N to 75°N, 140°W to 180°E
+- **Hawaii**: 19°N to 23°N, 154°W to 162°W
+- **Puerto Rico & Caribbean**: 15°N to 20°N, 68°W to 80°W
+
 ## Temperature Classification
 
 - **Hot**: 80°F and above
@@ -86,9 +96,12 @@ The service will start on port 8080.
    - This will show the main page with usage instructions and example links
 
 2. **Test the weather endpoint:**
+   - Philadelphia: `http://localhost:8080/weather?lat=32.771496&lon=-89.118347` 🦅 
    - New York City: `http://localhost:8080/weather?lat=40.7128&lon=-74.0060`
    - Los Angeles: `http://localhost:8080/weather?lat=34.0522&lon=-118.2437`
-   - London: `http://localhost:8080/weather?lat=51.5074&lon=-0.1278`
+   - Chicago: `http://localhost:8080/weather?lat=41.8781&lon=-87.6298`
+   - Miami: `http://localhost:8080/weather?lat=25.7617&lon=-80.1918`
+   - Seattle: `http://localhost:8080/weather?lat=47.6062&lon=-122.3321`
 
 3. **Health check:**
    - `http://localhost:8080/health`
